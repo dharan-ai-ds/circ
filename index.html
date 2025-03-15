@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circumference Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            display: inline-block;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkblue;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Circumference Calculator</h2>
+        <label for="radius">Enter Radius:</label>
+        <input type="number" id="radius" placeholder="Enter radius" />
+        <br>
+        <button onclick="calculateCircumference()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateCircumference() {
+            let radius = document.getElementById("radius").value;
+            if (radius && radius > 0) {
+                let circumference = 2 * Math.PI * radius;
+                document.getElementById("result").innerHTML = 
+                    "Circumference: " + circumference.toFixed(2);
+            } else {
+                document.getElementById("result").innerHTML = 
+                    "Please enter a valid radius.";
+            }
+        }
+    </script>
+
+</body>
+</html>
